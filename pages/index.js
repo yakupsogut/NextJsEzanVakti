@@ -13,9 +13,9 @@ function HomePage({cities}) {
         <h1 className="title">Welcome to Next.js!</h1>
         <ul>
           {cities.map((city) => (
-            <li key={city.SehirID}>
-              <Link href="/city/[slug]" as={`/city/${slug(city.SehirAdi)}-${city.SehirID}`}>
-                <a>{city.SehirAdi}</a>
+            <li key={city.sehirID}>
+              <Link href="/city/[slug]" as={`/city/${slug(city.sehirAdi)}-${city.sehirID}`}>
+                <a>{city.sehirAdi}</a>
               </Link>
             </li>
           ))}
@@ -25,7 +25,7 @@ function HomePage({cities}) {
   }
   export async function getStaticProps() {
     //data fetch
-    const data =await unfetch('http://ezanvakti.herokuapp.com/sehirler/2')
+    const data =await unfetch('https://namaz-vakti-api.herokuapp.com/cities?country=2')
     const cities=await data.json()
     //console.log(cities)
     return {

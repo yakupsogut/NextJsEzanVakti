@@ -6,7 +6,7 @@ import Link from 'next/link'
 import uniqid from "uniqid"
 
 function CityTimeDetail({vakitler}) {
-  console.log(vakitler)
+  //console.log(vakitler)
     return (
       <Layout>
         <Head>
@@ -48,7 +48,7 @@ function CityTimeDetail({vakitler}) {
     const ilceler = await data.json()
   
     const paths = ilceler.map(ilce => {
-      return { params: { slug: `${slug(ilce.IlceAdi)}-${ilce.IlceID}` } }
+      return { params: { slug2: `${slug(ilce.IlceAdi)}-${ilce.IlceID}` } }
     })
   
     return {
@@ -60,7 +60,7 @@ function CityTimeDetail({vakitler}) {
   export async function getStaticProps({params}) {
     //data fetch
    // console.log(params.slug)
-    const id=params.slug.split("-").slice(-1)[0]
+    const id=params.slug2.split("-").slice(-1)[0]
     const data =await unfetch(`http://ezanvakti.herokuapp.com/vakitler/${id}`)
     const vakitler=await data.json()
     //console.log(character);

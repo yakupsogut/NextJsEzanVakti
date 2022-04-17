@@ -13,7 +13,7 @@ function CityDetail({city}) {
         <ul>
           {city.map((ilce) => (
             <li key={ilce.IlceID}>
-              <Link href="/cityTime/[slug]" as={`/cityTime/${slug(ilce.IlceAdi)}-${ilce.IlceID}`}>
+              <Link href="/cityTime/[slug2]" as={`/cityTime/${slug(ilce.IlceAdi)}-${ilce.IlceID}`}>
                 <a>{ilce.IlceAdi}</a>
               </Link>
             </li>

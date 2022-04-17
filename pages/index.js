@@ -27,7 +27,7 @@ function HomePage({cities}) {
     //data fetch
     const data =await unfetch('http://ezanvakti.herokuapp.com/sehirler/2')
     const cities=await data.json()
-    console.log(cities)
+    //console.log(cities)
     return {
       props: {
         cities

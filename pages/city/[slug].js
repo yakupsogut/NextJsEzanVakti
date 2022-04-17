@@ -11,20 +11,20 @@ function CityDetail({city}) {
           <title>Anasayfa</title>
         </Head>
         <ul>
-          {city.map((ilce) => (
+          {/*city.map((ilce) => (
             <li key={ilce.IlceID}>
               <Link href="/cityTime/[slug2]" as={`/cityTime/${slug(ilce.IlceAdi)}-${ilce.IlceID}`}>
                 <a>{ilce.IlceAdi}</a>
               </Link>
             </li>
-          ))}
+          ))*/}
         </ul>
 
       
       </Layout>
     )
   }
-  export async function getStaticPaths() {
+  /*export async function getStaticPaths() {
     const data = await unfetch('http://ezanvakti.herokuapp.com/sehirler/2')
     const cities = await data.json()
   
@@ -50,5 +50,5 @@ function CityDetail({city}) {
         city
       },
     }
-  }
+  }*/
 export default CityDetail

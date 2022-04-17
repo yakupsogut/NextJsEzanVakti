@@ -23,7 +23,7 @@ function CityTimeDetail({vakitler}) {
             <td>Ay</td>
           </th>
        
-        {vakitler.map((vakit) => (
+        {/*vakitler.map((vakit) => (
           <tr key={uniqid()}>
             <td>{vakit.MiladiTarihUzun}</td>
             <td>{vakit.Imsak}</td>
@@ -38,12 +38,12 @@ function CityTimeDetail({vakitler}) {
             </td>
           </tr>
           
-        ))}
+        ))*/}
          </table>
       </Layout>
     )
   }
-  export async function getStaticPaths() {
+  /*export async function getStaticPaths() {
     const data = await unfetch('http://ezanvakti.herokuapp.com/ilceler/539')
     const ilceler = await data.json()
   
@@ -69,5 +69,5 @@ function CityTimeDetail({vakitler}) {
         vakitler
       },
     }
-  }
+  }*/
 export default CityTimeDetail

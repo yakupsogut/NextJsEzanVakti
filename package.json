@@ -1,0 +1,28 @@
+{
+  "name": "nextjsprojesi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
+    "isomorphic-unfetch": "^3.1.0",
+    "next": "^12.1.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "slug": "^5.3.0",
+    "uniqid": "^5.4.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}

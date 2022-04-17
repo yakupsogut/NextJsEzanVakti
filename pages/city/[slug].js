@@ -24,7 +24,7 @@ function CityDetail({city}) {
       </Layout>
     )
   }
-  /*export async function getStaticPaths() {
+  export async function getStaticPaths() {
     const data = await unfetch('http://ezanvakti.herokuapp.com/sehirler/2')
     const cities = await data.json()
   
@@ -50,5 +50,5 @@ function CityDetail({city}) {
         city
       },
     }
-  }*/
+  }
 export default CityDetail

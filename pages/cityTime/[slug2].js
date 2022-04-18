@@ -42,9 +42,10 @@ const ssa=printAddress();*/
           <title>Anasayfa</title>
         </Head>
         <div>
-          {vakitler.map((vakit) => {
-            return <div>{vakit.Aksam}</div>
-          })}
+        {Array.isArray(vakitler) && vakitler.map((vakit)=>{
+          return <div>{vakit.Aksam}</div>
+        })
+}
         </div>
       </Layout>
     )

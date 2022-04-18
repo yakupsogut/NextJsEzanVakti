@@ -5,7 +5,7 @@ import slug from "slug"
 import Link from 'next/link'
 import uniqid from "uniqid"
 import axios from "axios"
-
+import Image from 'next/image'
 
 function CityTimeDetail({vakitler}) {
 /*console.log(id);
@@ -36,38 +36,56 @@ const ssa=printAddress();*/
 /*const yeni=vakitler.map((vakit)=>{
   vakit.AyinSekliURL
 })*/
+
     return (
       <Layout>
         <Head>
           <title>Anasayfa</title>
         </Head>
-        <table width="100%">
-          <th >
-            <td>Tarih</td>
-            <td>İmsak</td>
-            <td>Öğle</td>
-            <td>İkindi</td>
-            <td>Akşam</td>
-            <td>Yatsi</td>
-            <td>Ay</td>
-          </th>
-        {Array.isArray(vakitler) && vakitler.map((vakit)=>{
-          return <tr key={uniqid()}>
-          <td>{vakit.MiladiTarihUzun}</td>
-          <td>{vakit.Imsak}</td>
-          <td>{vakit.Ogle}</td>
-          <td>{vakit.Ikindi}</td>
-          <td>{vakit.Aksam}</td>
-          <td>{vakit.Yatsi}</td>
-          <td>
-            <figure>
-              <img src={vakit.AyinSekliURL} width="100px"></img>
-            </figure>
-          </td>
-        </tr>
-        })
-}
-        </table>
+        <div className="table-responsive-lg">
+          <table className="table table-hover table-striped">
+            <thead className="thead-light">
+              <tr>
+                <th>Tarih</th>
+                <th>İmsak</th>
+                <th>Öğle</th>
+                <th>İkindi</th>
+                <th>Akşam</th>
+                <th>Yatsi</th>
+                <th>Ay</th>
+              </tr>
+            </thead>
+            <tbody>
+            {Array.isArray(vakitler) &&
+              vakitler.map((vakit) => {
+                return (
+                  <tr key={uniqid()}>
+                    <td>{vakit.MiladiTarihUzun}</td>
+                    <td>{vakit.Imsak}</td>
+                    <td>{vakit.Ogle}</td>
+                    <td>{vakit.Ikindi}</td>
+                    <td>{vakit.Aksam}</td>
+                    <td>{vakit.Yatsi}</td>
+                    <td>
+                      <figure>
+                        <Image
+                          loader={() => vakit.AyinSekliURL}
+                          src={vakit.AyinSekliURL}
+                          width={50}
+                          height={50}
+                        />
+                      </figure>
+                    </td>
+                  </tr>
+                )
+              })}
+              </tbody>
+          </table>
+          
+        </div>
+        {!Array.isArray(vakitler) && (
+          <h2>Diyanet Isleri Baskanligi servisine baglanilamiyor.</h2>
+        )}
       </Layout>
     )
   }

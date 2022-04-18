@@ -10,17 +10,17 @@ function HomePage({cities}) {
         <Head>
           <title>Anasayfa</title>
         </Head>
-        <div className="container">
+        
             <h1 className="title">Şehirler</h1>
         <hr></hr>
           {cities.map((city) => (
             
-              <Link href="/city/[slug]" as={`/city/${slug(city.sehirAdi)}-${city.sehirID}`}>
-                <button key={city.sehirID} className="btn btn-dark btn-block m-1">{city.sehirAdi}</button>
+              <Link  key={city.sehirID} href="/city/[slug]" as={`/city/${slug(city.sehirAdi)}-${city.sehirID}`}>
+                <button className="btn btn-dark btn-block m-1">{city.sehirAdi}</button>
               </Link>
           ))}
         
-        </div>
+        
       
       </Layout>
     )

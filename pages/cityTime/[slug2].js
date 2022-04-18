@@ -4,15 +4,29 @@ import unfetch from "isomorphic-unfetch"
 import slug from "slug"
 import Link from 'next/link'
 import uniqid from "uniqid"
+import axios from "axios"
 
-function CityTimeDetail({vakitler}) {
-  console.log(vakitler)
+
+function CityTimeDetail({id}) {
+
+  const response=axios.get(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
+  /*const address = fetch(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
+  .then((response) => response.json())*/
+
+const printAddress = async () => {
+  const a = await (await response).data;
+  console.log(a);
+};
+
+printAddress();
+
+
     return (
       <Layout>
         <Head>
           <title>Anasayfa</title>
         </Head>
-        
+          
       </Layout>
     )
   }
@@ -39,7 +53,7 @@ function CityTimeDetail({vakitler}) {
     //console.log(character);
     return {
       props: {
-        vakitler
+        id
       },
     }
   }

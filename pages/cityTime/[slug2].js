@@ -33,17 +33,18 @@ const printAddress = async () => {
   return <div>{a[0][0]}</div>
 };
 const ssa=printAddress();*/
-//const yeni=vakitler[0]
+/*const yeni=vakitler.map((vakit)=>{
+  vakit.AyinSekliURL
+})*/
     return (
       <Layout>
         <Head>
           <title>Anasayfa</title>
         </Head>
         <div>
-          
-        {vakitler[0]}
-            
-          
+          {vakitler.map((vakit) => {
+            return <div>{vakit.Aksam}</div>
+          })}
         </div>
       </Layout>
     )
@@ -66,7 +67,7 @@ const ssa=printAddress();*/
     //data fetch
    // console.log(params.slug)
     const id=params.slug2.split("-").slice(-1)[0]
-    const data =await unfetch(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
+    const data =await unfetch(`http://ezanvakti.herokuapp.com/vakitler/${id}`)
     const vakitler=await data.json()
     //console.log(character);
     return {

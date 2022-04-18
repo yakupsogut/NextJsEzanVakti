@@ -41,7 +41,7 @@ const ssa=printAddress();*/
         </Head>
         <div>
           
-        {vakitler}
+        {vakitler[0]}
             
           
         </div>

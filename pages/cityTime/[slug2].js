@@ -7,19 +7,24 @@ import uniqid from "uniqid"
 import axios from "axios"
 
 
-function CityTimeDetail({id}) {
-console.log(id);
+function CityTimeDetail({vakitler}) {
+/*console.log(id);
 const response=axios.get(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
   
 
 const printAddress = async () => {
   const a = await (await response).data;
-  console.log(a[0])
+  //console.log(a[0])
+  return a;
+};*/
+//printAddress()
+/*const ssa=printAddress();*/
+
+/*const printAddress = async () => {
+  const a = vakitler;
   return a;
 };
-printAddress()
-/*const ssa=printAddress();*/
-//console.log(printAddress())
+console.log(printAddress())*/
  /* const response=axios.get(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
   
 
@@ -36,9 +41,7 @@ const ssa=printAddress();*/
         </Head>
         <div>
           
-        {/*printAddress().then(value => {
-  console.log(value); // 👉️ "hello"
-})*/}
+        {vakitler}
             
           
         </div>
@@ -68,7 +71,7 @@ const ssa=printAddress();*/
     //console.log(character);
     return {
       props: {
-        id
+        vakitler
       },
     }
   }

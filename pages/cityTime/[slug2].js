@@ -68,12 +68,8 @@ const ssa=printAddress();*/
                     <td>{vakit.Yatsi}</td>
                     <td>
                       <figure>
-                        <Image
-                          loader={() => vakit.AyinSekliURL}
-                          src={vakit.AyinSekliURL}
-                          width={50}
-                          height={50}
-                        />
+                        <img src={vakit.AyinSekliURL} width={50}></img>
+                        
                       </figure>
                     </td>
                   </tr>

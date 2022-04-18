@@ -8,25 +8,40 @@ import axios from "axios"
 
 
 function CityTimeDetail({id}) {
-
-  const response=axios.get(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
-  /*const address = fetch(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
-  .then((response) => response.json())*/
+console.log(id);
+const response=axios.get(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
+  
 
 const printAddress = async () => {
   const a = await (await response).data;
-  console.log(a);
+  console.log(a[0])
+  return a;
 };
+printAddress()
+/*const ssa=printAddress();*/
+//console.log(printAddress())
+ /* const response=axios.get(`https://namaz-vakti-api.herokuapp.com/data?region=${id}`)
+  
 
-printAddress();
-
-
+const printAddress = async () => {
+  const a = await (await response).data;
+  return <div>{a[0][0]}</div>
+};
+const ssa=printAddress();*/
+//const yeni=vakitler[0]
     return (
       <Layout>
         <Head>
           <title>Anasayfa</title>
         </Head>
+        <div>
           
+        {/*printAddress().then(value => {
+  console.log(value); // 👉️ "hello"
+})*/}
+            
+          
+        </div>
       </Layout>
     )
   }

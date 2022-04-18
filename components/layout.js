@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Navigation from "./navigation"
 
 function Layout({children}) {
   return (

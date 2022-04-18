@@ -10,16 +10,18 @@ function HomePage({cities}) {
         <Head>
           <title>Anasayfa</title>
         </Head>
-        <h1 className="title">Welcome to Next.js!</h1>
-        <ul>
+        <div className="container">
+            <h1 className="title">Şehirler</h1>
+        <hr></hr>
           {cities.map((city) => (
-            <li key={city.sehirID}>
+            
               <Link href="/city/[slug]" as={`/city/${slug(city.sehirAdi)}-${city.sehirID}`}>
-                <a>{city.sehirAdi}</a>
+                <button key={city.sehirID} className="btn btn-dark btn-block m-1">{city.sehirAdi}</button>
               </Link>
-            </li>
           ))}
-        </ul>
+        
+        </div>
+      
       </Layout>
     )
   }

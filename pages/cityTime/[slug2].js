@@ -41,12 +41,33 @@ const ssa=printAddress();*/
         <Head>
           <title>Anasayfa</title>
         </Head>
-        <div>
+        <table width="100%">
+          <th >
+            <td>Tarih</td>
+            <td>İmsak</td>
+            <td>Öğle</td>
+            <td>İkindi</td>
+            <td>Akşam</td>
+            <td>Yatsi</td>
+            <td>Ay</td>
+          </th>
         {Array.isArray(vakitler) && vakitler.map((vakit)=>{
-          return <div>{vakit.Aksam}</div>
+          return <tr key={uniqid()}>
+          <td>{vakit.MiladiTarihUzun}</td>
+          <td>{vakit.Imsak}</td>
+          <td>{vakit.Ogle}</td>
+          <td>{vakit.Ikindi}</td>
+          <td>{vakit.Aksam}</td>
+          <td>{vakit.Yatsi}</td>
+          <td>
+            <figure>
+              <img src={vakit.AyinSekliURL} width="100px"></img>
+            </figure>
+          </td>
+        </tr>
         })
 }
-        </div>
+        </table>
       </Layout>
     )
   }
